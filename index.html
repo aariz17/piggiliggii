@@ -123,9 +123,9 @@
             transform: translateY(-3px);
         }
 
-        /* NEW: Cat Gallery and Pop-In Animation Styles */
+        /* Cat Gallery and Pop-In Animation Styles */
         .cat-gallery {
-            display: none; /* Hidden until clicked */
+            display: none;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
             margin-top: 2.5rem;
@@ -209,13 +209,13 @@
 
         <div class="signature">
             With warmest wishes,<br>
-            [Your Name]
+            Fatema
         </div>
 
-        <!-- Updated Button Trigger -->
+        <!-- Button Trigger -->
         <button class="btn" id="revealBtn">Click for a Peaceful Surprise 🐾</button>
 
-        <!-- New Animated Cat Gallery Container -->
+        <!-- Animated Cat Gallery Container -->
         <div id="catGallery" class="cat-gallery">
             <img class="cat-img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=500&auto=format&fit=crop" alt="Cozy sleeping cat">
             <img class="cat-img" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=500&auto=format&fit=crop" alt="Relaxing cat">
@@ -234,7 +234,7 @@
             // Update button text and style smoothly
             this.textContent = "Enjoy the quiet moments! 🌿";
             this.style.backgroundColor = "#72877d";
-            this.style.pointerEvents = "none"; // Prevents clicking it again
+            this.style.pointerEvents = "none"; 
             
             // Smoothly scroll down a bit so they see the cats pop up perfectly
             setTimeout(() => {
