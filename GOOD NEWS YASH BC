@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Peaceful New Chapter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-attachment: fixed;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #4a4a4a;
+            overflow-x: hidden;
+            padding: 2rem 0;
+        }
+
+        /* Gentle floating animation for background elements */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(200, 220, 230, 0.3);
+            animation: float 15s infinite ease-in-out alternate;
+            z-index: -1;
+        }
+
+        .circle:nth-child(1) { width: 300px; height: 300px; top: -10%; left: -10%; animation-duration: 20s; }
+        .circle:nth-child(2) { width: 500px; height: 500px; bottom: -20%; right: -10%; animation-duration: 25s; }
+        .circle:nth-child(3) { width: 200px; height: 200px; top: 40%; left: 80%; animation-duration: 18s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(30px) translateX(20px); }
+        }
+
+        /* Main content container */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 4rem;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 255, 255, 1);
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            color: #5d737e;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8da399;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .quote {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #7b9095;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .signature {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #5d737e;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #8da399;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #72877d;
+            transform: translateY(-3px);
+        }
+
+        /* NEW: Cat Gallery and Pop-In Animation Styles */
+        .cat-gallery {
+            display: none; /* Hidden until clicked */
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px dashed #cfdad5;
+        }
+
+        .cat-gallery.show {
+            display: grid;
+        }
+
+        .cat-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            opacity: 0;
+            transform: scale(0.7) translateY(20px);
+        }
+
+        /* Smooth, bouncy entry for the images */
+        .cat-gallery.show .cat-img {
+            animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Staggering the entry of each cat picture */
+        .cat-gallery.show .cat-img:nth-child(1) { animation-delay: 0.2s; }
+        .cat-gallery.show .cat-img:nth-child(2) { animation-delay: 0.5s; }
+        .cat-gallery.show .cat-img:nth-child(3) { animation-delay: 0.8s; }
+
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .cat-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <div class="card">
+        <div class="subtitle">A Beautiful Beginning</div>
+        <h1>Welcome to Your New Life</h1>
+        
+        <p>
+            I am so incredibly happy to hear your good news. Leaving the noise behind and stepping into a space that truly belongs to you is a massive achievement. 
+        </p>
+        
+        <p>
+            You have worked so hard to get here, and you deserve every ounce of the peace and clarity that is waiting for you in this new chapter. May your days be quiet when you need rest, joyful when you need light, and filled with a profound sense of freedom.
+        </p>
+
+        <div class="quote">
+            "Every new beginning comes from some other beginning's end."
+        </div>
+
+        <p>
+            Breathe deeply. You made it. Here is to a beautiful, peaceful, and wonderful life ahead.
+        </p>
+
+        <div class="signature">
+            With warmest wishes,<br>
+            [Your Name]
+        </div>
+
+        <!-- Updated Button Trigger -->
+        <button class="btn" id="revealBtn">Click for a Peaceful Surprise 🐾</button>
+
+        <!-- New Animated Cat Gallery Container -->
+        <div id="catGallery" class="cat-gallery">
+            <img class="cat-img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=500&auto=format&fit=crop" alt="Cozy sleeping cat">
+            <img class="cat-img" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=500&auto=format&fit=crop" alt="Relaxing cat">
+            <img class="cat-img" src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=500&auto=format&fit=crop" alt="Happy calm cat">
+        </div>
+    </div>
+
+    <!-- JavaScript to handle the click and trigger animations -->
+    <script>
+        document.getElementById('revealBtn').addEventListener('click', function() {
+            const gallery = document.getElementById('catGallery');
+            
+            // Show the gallery grid
+            gallery.classList.add('show');
+            
+            // Update button text and style smoothly
+            this.textContent = "Enjoy the quiet moments! 🌿";
+            this.style.backgroundColor = "#72877d";
+            this.style.pointerEvents = "none"; // Prevents clicking it again
+            
+            // Smoothly scroll down a bit so they see the cats pop up perfectly
+            setTimeout(() => {
+                gallery.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>
